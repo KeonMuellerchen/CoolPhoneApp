@@ -2,11 +2,15 @@ package Controllers;
 
 import Models.DBConnect;
 import Models.Phone;
+import Views.SceneChanger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -60,4 +64,10 @@ public class PhoneCreatorViewController implements Initializable { //must add im
         }
 
     }//end of createPhoneButtonPushed()
+
+    @FXML
+    public void backToPhonesTable (ActionEvent event) throws IOException {
+        SceneChanger.changeScenes(event, "PhoneTableView.fxml", "Phones Table");
+    }//end
+
 }//end of PhoneCreatorViewController class

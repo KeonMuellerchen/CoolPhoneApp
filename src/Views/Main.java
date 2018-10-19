@@ -19,7 +19,7 @@ public class Main extends Application {   //must add extends application
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Create phone");
+        primaryStage.setTitle("Phones Table");
         primaryStage.show();
     }//end of start
 }//end of Main
