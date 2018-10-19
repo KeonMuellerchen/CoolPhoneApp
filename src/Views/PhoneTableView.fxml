@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.PhoneTableViewController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="242.0" layoutY="72.0" prefHeight="400.0" prefWidth="600.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Here are the phone options">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn fx:id="makeColumn" prefWidth="52.0" text="Make" />
+                <TableColumn fx:id="modelColumn" prefWidth="57.0" text="Model" />
+                  <TableColumn fx:id="osColumn" prefWidth="42.0" text="OS" />
+                  <TableColumn fx:id="screenSizeColumn" prefWidth="100.0" text="Screen Size" />
+                  <TableColumn fx:id="memoryColumn" text="Memory" />
+                  <TableColumn fx:id="rearCameraResColumn" minWidth="0.0" prefWidth="100.0" text="Rear Camera" />
+                  <TableColumn fx:id="frontCarmeraResColumn" minWidth="0.0" prefWidth="166.0" text="Front Camera" />
+              </columns>
+            </TableView>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

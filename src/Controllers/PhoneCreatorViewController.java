@@ -1,13 +1,12 @@
 package Controllers;
 
 import Models.DBConnect;
+import Models.Phone;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
-
-import javax.xml.soap.Text;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -44,5 +43,21 @@ public class PhoneCreatorViewController implements Initializable { //must add im
 
     }//end of initialize
 
+    @FXML
+    public void createPhoneButtonPushed() {
 
+        Phone newPhone = new Phone(makeChoiceBox.getValue(), modelTextField.getText(), osChoiceBox.getValue(),
+                            Double.parseDouble(screenSizeTextField.getText()),
+                            Double.parseDouble(memoryTextField.getText()),
+                            Double.parseDouble(frontCameraTextField.getText()),
+                            Double.parseDouble(rearCameraTextField.getText()));
+
+        System.out.printf("New Phone: %s%n", newPhone);
+        try {
+            DBConnect.insertPhoneIntoDB(newPhone);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }//end of createPhoneButtonPushed()
 }//end of PhoneCreatorViewController class

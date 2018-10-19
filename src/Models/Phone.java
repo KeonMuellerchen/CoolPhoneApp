@@ -9,18 +9,18 @@ public class Phone {
     private double screenSize, memory, frontCameraRes, rearCameraRes, price;
     private Image image;
 
-    public Phone(String make, String model, String os, double screenSize) {
+    public Phone(String make, String model, String os, double screenSize, double memory, double frontCameraRes, double rearCameraRes) {
         setMake(make);
         setModel(model);
         setOs(os);
         setScreenSize(screenSize);
-    }//end
-
-    public Phone(String make, String model, String os, double screenSize, double memory, double frontCameraRes, double rearCameraRes, double price, Image image) {
-        this(make, model, os, screenSize);
         setMemory(memory);
         setFrontCameraRes(frontCameraRes);
         setRearCameraRes(rearCameraRes);
+    }//end
+
+    public Phone(String make, String model, String os, double screenSize, double memory, double frontCameraRes, double rearCameraRes, double price, Image image) {
+        this(make, model, os, screenSize, memory, frontCameraRes, rearCameraRes);
         setPrice(price);
         setImage(image);
     }//end
@@ -49,7 +49,8 @@ public class Phone {
     public void setModel(String model) {
         if (!model.isEmpty() && model.length() <30)
             this.model = model;
-        throw new IllegalArgumentException("Model name must be 0-30 characters");
+        else
+            throw new IllegalArgumentException("Model name must be 0-30 characters");
     }
 
     public String getOs() {

@@ -15,7 +15,7 @@ public class Main extends Application {   //must add extends application
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("PhoneCreatorView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("PhoneTableView.fxml"));
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
